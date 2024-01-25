@@ -13,38 +13,34 @@ $(document).ready(function () {
       displayCategoriesMobile(data.categorie_mobile);
 
       var categoryId = getParameterByName("categorie");
-      var entreeId = getParameterByName("entree");
-
+      var filteredEntree;
+      var filteredPlats;
       if (categoryId) {
         console.log("Catégorie sélectionnée:", categoryId);
-        loadPlatsOrDisplayAll(categoryId, data.plat, "plat");
-      } else {
+        filteredPlats = loadPlatsOrDisplayAll(categoryId, data.plat, "plat");
+
+        console.log("Catégorie d'entrée sélectionnée:", categoryId);
+        filteredEntree = loadEntreesOrDisplayAll(categoryId, data.entree,"entree");
+        console.log (filteredEntree);
+      } 
+      
+      else {
         console.log(
           "Aucune catégorie sélectionnée. Affichage de tous les plats."
         );
         displayPlats(data.plat);
-      }
-
-      
-
-      if (entreeId) {
-        console.log("Catégorie d'entrée sélectionnée:", entreeId);
-        loadEntreesOrDisplayAll(entreeId, data.entree);
-      } else {
-        console.log(
-          "Aucune catégorie d'entrée sélectionnée. Affichage de toutes les entrées."
-        );
         displayEntree(data.entree);
       }
 
+  
       console.log("Affichage des desserts.");
       displayDesserts(data.dessert);
 
       // Afficher les plats, entrées et desserts vedettes
-      displayVedettePlats(data.plat);
-      displayVedetteEntrees(data.entree);
-      displayVedetteDesserts(data.dessert);
-    },
+      displayVedettePlats(filteredPlats);
+      displayVedetteEntrees(filteredEntree);
+      displayVedetteDesserts(data.dessert);},
+      
     error: function (xhr, status, error) {
       console.error(
         "Erreur lors du chargement du fichier JSON:",
@@ -79,6 +75,7 @@ function loadPlatsOrDisplayAll(categoryId, categoryData, categoryType) {
     if (itemsInCategory.length > 0) {
       if (categoryType === "plat") {
         displayPlats(itemsInCategory);
+        return itemsInCategory;
       }
     } else {
       console.error("Aucun élément trouvé pour la catégorie:", categoryId);
@@ -99,6 +96,7 @@ function loadPlatsOrDisplayAll(categoryId, categoryData, categoryType) {
     if (itemsInCategory.length > 0) {
       if (categoryType === "entree") {
         displayEntree(itemsInCategory);
+        return itemsInCategory;
       }
     } else {
       console.error("Aucun élément trouvé pour la catégorie:", categoryId);
@@ -109,7 +107,7 @@ function loadPlatsOrDisplayAll(categoryId, categoryData, categoryType) {
 
 
 
-// Reste du code...
+
 
 // Affiche les catégories sur les écrans larges
 function displayCategoriesDestock(categories) {
@@ -128,7 +126,7 @@ function displayCategoriesDestock(categories) {
                             <h5 class="card-title p-3">${category.libelle}</h5>
                         </div>
                         <div class="card-body mx-auto">
-                            <a href="/asset/plat-par-categorie.html?categorie=${category.id_categorie}" class="btn btn-primary">Découvrir</a>
+                            <a href="/plat-par-categorie.html?categorie=${category.id_categorie}" class="btn btn-primary">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -142,10 +140,12 @@ function displayCategoriesDestock(categories) {
 function displayCategoriesMobile(categories) {
   var categoriesContainerMobile = $(".categorie_mobile").empty();
   $.each(categories, function (index, category) {
-    if (category.active === "Yes") {
+    if (category.active === "Yes" &&
+         category.id_categorie >= 0 &&
+          category.id_categorie <= 4 ) {
       var categoryCard = `
                 <div class="col-12 container">
-                    <a href="plat-par-categorie.html?categorie=${category.id_categorie}" class="imagine-link position-relative">
+                    <a href="/plat-par-categorie.html?categorie=${category.id_categorie}" class="imagine-link position-relative">
                         <img src="${category.image}" alt="" class="img-fluid mb-4 img-accueil-mobile">
                         <h4 class="image-title position-absolute">${category.libelle}</h4>
                     </a>
@@ -158,73 +158,79 @@ function displayCategoriesMobile(categories) {
 
 // Affiche les plats vedettes
 function displayVedettePlats(vedettePlats) {
-  var vedettePlatsContainer = $("#nav-vedette-plats").empty();
+  var vedettePlatsContainer = $("#nav-vedette");
   $.each(vedettePlats, function (index, plat) {
-    var vedetteCard = `
-            <div class="gyoza mt-5">
-                <div class="row justify-content-center">
-                    <h4>${plat.libelle}</h4>
-                    <img src="${plat.image}" class="col-3 mb-4" alt="${plat.libelle}" srcset="">
-                    <p>${plat.description}</p>
-                    <p>${plat.prix} € par portion.</p>
-                    <a href="commande.html" class="order-button col-2">Commander</a>
-                </div>
-            </div>
-        `;
-    vedettePlatsContainer.append(vedetteCard);
+    if(plat.vedette == "Yes"){
+      var vedetteCard = `
+              <div class="gyoza mt-5">
+                  <div class=" justify-content-center">
+                      <h4>${plat.libelle}</h4>
+                      <img src="${plat.image}" class="col-3 mb-4" alt="${plat.libelle}" srcset="">
+                      <p>${plat.description}</p>
+                      <p>${plat.prix} € par portion.</p>
+                      <a href="commande.html" class="order-button  col-md-2">Commander</a>
+                  </div>
+              </div>
+          `;
+      vedettePlatsContainer.append(vedetteCard);
+    }
   });
 }
 
 // Affiche les entrées vedettes
 function displayVedetteEntrees(vedetteEntrees) {
-  var vedetteEntreesContainer = $("#nav-vedette-entrees").empty();
+  var vedetteEntreesContainer = $("#nav-vedette");
   $.each(vedetteEntrees, function (index, entree) {
-    var vedetteCard = `
-            <div class="gyoza mt-5">
-                <div class="row justify-content-center">
-                    <h4>${entree.libelle}</h4>
-                    <img src="${entree.image}" class="col-3 mb-4" alt="${entree.libelle}" srcset="">
-                    <p>${entree.description}</p>
-                    <p>${entree.prix} € par portion.</p>
-                    <a href="commande.html" class="order-button col-2">Commander</a>
-                </div>
-            </div>
-        `;
-    vedetteEntreesContainer.append(vedetteCard);
+    if(entree.vedette == "Yes"){
+      var vedetteCard = `
+              <div class="gyoza mt-5">
+                  <div class=" justify-content-center">
+                      <h4>${entree.libelle}</h4>
+                      <img src="${entree.image}" class="col-3 mb-4" alt="${entree.libelle}" srcset="">
+                      <p>${entree.description}</p>
+                      <p>${entree.prix} € par portion.</p>
+                      <a href="commande.html" class="order-button  col-md-2">Commander</a>
+                  </div>
+              </div>
+          `;
+      vedetteEntreesContainer.append(vedetteCard);
+    }
   });
 }
 
 // Affiche les desserts vedettes
-function displayVedetteDesserts(vedetteDesserts) {
-  var vedetteDessertsContainer = $("#nav-vedette-desserts").empty();
-  $.each(vedetteDesserts, function (index, dessert) {
+function displayVedetteDesserts(vedettedesserts) {
+  var vedetteDessertsContainer = $("#nav-vedette");
+  $.each(vedettedesserts, function (index, dessert) {
+    if(dessert.vedette == "Yes"){
     var vedetteCard = `
             <div class="gyoza mt-5">
-                <div class="row justify-content-center">
+                <div class=" justify-content-center">
                     <h4>${dessert.libelle}</h4>
                     <img src="${dessert.image}" class="col-3 mb-4" alt="${dessert.libelle}" srcset="">
                     <p>${dessert.description}</p>
                     <p>${dessert.prix} € par portion.</p>
-                    <a href="commande.html" class="order-button col-2">Commander</a>
+                    <a href="commande.html" class="order-button ">Commander</a>
                 </div>
-            </div>
-        `;
+            </div>`;
     vedetteDessertsContainer.append(vedetteCard);
+  }
   });
 }
 
-// Affiche les plats
+// Affiche les plats 
 function displayPlats(plats) {
-  var platsContainer = $("#nav-plats").empty();
+  console.log(plats)
+  var platsContainer = $("#nav-plats");
   $.each(plats, function (index, plat) {
     var platCard = `
             <div class="gyoza mt-5">
-                <div class="row justify-content-center">
+                <div class=" justify-content-center">
                     <h4>${plat.libelle}</h4>
                     <img src="${plat.image}" class="col-3 mb-4" alt="${plat.libelle}" srcset="">
                     <p>${plat.description}</p>
                     <p>${plat.prix} € par portion.</p>
-                    <a href="commande.html" class="order-button col-2">Commander</a>
+                    <a href="commande.html" class="order-button  ">Commander</a>
                 </div>
             </div>
         `;
@@ -232,18 +238,19 @@ function displayPlats(plats) {
   });
 }
 
-// Affiche les entrées
+// Affiche les entrées destock
 function displayEntree(entrees) {
-  var entreeContainer = $("#nav-entree").empty();
+  console.log(entrees)
+  var entreeContainer = $("#nav-entree");
   $.each(entrees, function (index, entree) {
     var entreeCard = `
             <div class="gyoza mt-5">
-                <div class="row justify-content-center">
+                <div class=" justify-content-center">
                     <h4>${entree.libelle}</h4>
                     <img src="${entree.image}" class="col-3 mb-4" alt="${entree.libelle}" srcset="">
                     <p>${entree.description}</p>
                     <p>${entree.prix} € par portion.</p>
-                    <a href="commande.html" class="order-button col-2">Commander</a>
+                    <a href="commande.html" class="order-button ">Commander</a>
                 </div>
             </div>
         `;
@@ -251,18 +258,18 @@ function displayEntree(entrees) {
   });
 }
 
-// Affiche les desserts
+// Affiche les desserts destock
 function displayDesserts(desserts) {
   var dessertContainer = $("#nav-dessert").empty();
   $.each(desserts, function (index, dessert) {
     var dessertCard = `
             <div class="gyoza mt-5">
-                <div class="row justify-content-center">
+                <div class=" justify-content-center">
                     <h4>${dessert.libelle}</h4>
                     <img src="${dessert.image}" class="col-3 mb-4" alt="${dessert.libelle}" srcset="">
                     <p>${dessert.description}</p>
                     <p>${dessert.prix} € par portion.</p>
-                    <a href="commande.html" class="order-button col-2">Commander</a>
+                    <a href="commande.html" class="order-button ">Commander</a>
                 </div>
             </div>
         `;
@@ -270,20 +277,64 @@ function displayDesserts(desserts) {
   });
 }
 
-// Initialise le carrousel
-function initCarousel() {
-  // Implémentez ici la logique d'initialisation du carrousel
-}
 
-// Gère le clic sur le bouton "Valider la commande"
-$("#valider-commande").on("click", function () {
-  var requiredFields = ["nom", "prenom", "email", "telephone", "adresse"];
-  for (var i = 0; i < requiredFields.length; i++) {
-    var field = $("#" + requiredFields[i]);
-    if (field.val().trim() === "") {
-      alert("Veuillez remplir tous les champs du formulaire.");
-      return false;
-    }
-  }
-  // Form.submit(); // Décommentez cette ligne pour envoyer le formulaire
-});
+ 
+
+
+
+
+  $(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+      e.preventDefault();
+
+      // Clear previous error messages
+      $('.form-control').next('div.text-danger').remove();
+
+      // Define patterns for form fields
+      const namePattern = /^[a-zA-ZàâäéèêëïîöôüùûçÀÂÄÉÈÊËÏÎÖÔÜÙÛÇ]{2,30}$/;
+      const phonePattern = /^\d{10}$/;
+      const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+
+      let isFormValid = true;
+
+      // Validate form fields
+      $('#nom').val($.trim($('#nom').val())).each(function() {
+        if (!namePattern.test($(this).val())) {
+          isFormValid = false;
+          $(this).after('<div class="text-danger">Veuillez entrer un nom valide.</div>');
+        }
+      });
+
+      $('#prenom').val($.trim($('#prenom').val())).each(function() {
+        if (!namePattern.test($(this).val())) {
+          isFormValid = false;
+          $(this).after('<div class="text-danger">Veuillez entrer un prénom valide.</div>');
+        }
+      });
+
+      $('#telephone').val($.trim($('#telephone').val())).each(function() {
+        if (!phonePattern.test($(this).val())) {
+          isFormValid = false;
+          $(this).after('<div class="text-danger">Veuillez entrer un numéro de téléphone valide.</div>');
+        }
+      });
+
+      $('#email').val($.trim($('#email').val())).each(function() {
+        if (!emailPattern.test($(this).val())) {
+          isFormValid = false;
+          $(this).after('<div class="text-danger">Veuillez entrer une adresse email valide.</div>');
+        }
+      });
+
+      $('#demande').val($.trim($('#demande').val())).each(function() {
+        if ($(this).val().length < 10) {
+          isFormValid = false;
+          $(this).after('<div class="text-danger">Veuillez entrer une demande d\'au moins 10 caractères.</div>');
+        }
+      });
+
+     
+        });
+      }
+    );
+  

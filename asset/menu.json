@@ -74,7 +74,7 @@
        {
            "id_categorie": 3,
            "libelle": "Salade",
-           "image": "/img/categorie/salade-horizontal.png",
+           "image": "/img/categorie/salade-horonzital.png",
            "active": "Yes"
        },
        {
