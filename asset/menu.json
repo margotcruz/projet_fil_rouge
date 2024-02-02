@@ -3,49 +3,49 @@
        {
            "id_categorie": 0,
            "libelle": "Asian",
-           "image": "/img/categorie/asian.png",
+           "image": "img/categorie/asian.png",
            "active": "Yes"
        },
        {
            "id_categorie": 1,
            "libelle": "Pasta",
-           "image": "/img/categorie/pasta.png",
+           "image": "img/categorie/pasta.png",
            "active": "Yes"
        },
        {
            "id_categorie": 2,
            "libelle": "Pizza",
-           "image": "/img/categorie/pizza.png",
+           "image": "img/categorie/pizza.png",
            "active": "Yes"
        },
        {
            "id_categorie": 3,
            "libelle": "Salade",
-           "image": "/img/categorie/salade.png",
+           "image": "img/categorie/salade.png",
            "active": "Yes"
        },
        {
            "id_categorie": 4,
            "libelle": "Veggi",
-           "image": "/img/categorie/veggi.png",
+           "image": "img/categorie/veggi.png",
            "active": "Yes"
        },
        {
            "id_categorie": 5,
            "libelle": "Wrap",
-           "image": "/img/categorie/wrap.png",
+           "image": "img/categorie/wrap.png",
            "active": "Yes"
        },
        {
         "id_categorie": 6,
         "libelle": "Burger",
-        "image": "/img/categorie/burger.png",
+        "image": "img/categorie/burger.png",
         "active": "Yes"
     },
     {
         "id_categorie": 7,
         "libelle": "Sandwich",
-        "image": "/img/categorie/sandwich.png",
+        "image": "img/categorie/sandwich.png",
         "active": "Yes"
     }
 
@@ -56,37 +56,37 @@
        {
            "id_categorie": 0,
            "libelle": "Asian",
-           "image": "/img/categorie/asian-horizontal.png",
+           "image": "img/categorie/asian-horizontal.png",
            "active": "Yes"
        },
        {
            "id_categorie": 1,
            "libelle": "Pasta",
-           "image": "/img/categorie/pasta-horizontal.png",
+           "image": "img/categorie/pasta-horizontal.png",
            "active": "Yes"
        },
        {
            "id_categorie": 2,
            "libelle": "Pizza",
-           "image": "/img/categorie/pizza-horizontal.png",
+           "image": "img/categorie/pizza-horizontal.png",
            "active": "Yes"
        },
        {
            "id_categorie": 3,
            "libelle": "Salade",
-           "image": "/img/categorie/salade-horonzital.png",
+           "image": "img/categorie/salade-horonzital.png",
            "active": "Yes"
        },
        {
            "id_categorie": 4,
            "libelle": "Veggi",
-           "image": "/img/categorie/veggi-horizontal.png",
+           "image": "img/categorie/veggi-horizontal.png",
            "active": "Yes"
        },
        {
            "id_categorie": 5,
            "libelle": "Wrap",
-           "image": "/img/categorie/wrap-horizontal.png",
+           "image": "img/categorie/wrap-horizontal.png",
            "active": "Yes"
        }
    ],
@@ -96,17 +96,18 @@
            "libelle": "Courgettes Farcies 🌿",
            "description": "Des courgettes tendres, généreusement garnies d'un mélange savoureux de quinoa, de légumes frais et d'herbes aromatiques.",
            "prix": 12.99,
-           "image": "/img/plats/courgette-farcie.png",
+           "image": "img/plats/courgette-farcie.png",
            "id_categorie": 4,
            "vedette": "Yes",
            "active": "Yes"
+           
        },
        {
            "id_plat": 1,
-           "libelle": "🍔 Le Délice Angus 🍔",
+           "libelle": "🍔 Le burger Angus 🍔",
            "description": "Un savoureux burger composé d'une généreuse portion de bœuf Angus grillée, accompagnée de fromage Gouda fondant.",
            "prix": 12.99,
-           "image": "/img/plats/burger-angus.png",
+           "image": "img/plats/burger-angus.png",
            "id_categorie": 6,
            "vedette": "Yes",
            "active": "Yes"
@@ -116,7 +117,7 @@
            "libelle": "Pizza chorizo 🍕",
            "description": "Notre pâte croustillante est garnie de chorizo épicé, d'olives juteuses, d'oignons rouges savoureux et de poivrons colorés, le tout recouvert d'un fromage fondant.",
            "prix": 16.99,
-           "image": "/img/plats/pizza-chorizo.png",
+           "image": "img/plats/pizza-chorizo.png",
            "id_categorie": 2,
            "vedette": "No",
            "active": "Yes"
@@ -126,7 +127,7 @@
            "libelle": "🥗 Salade César avec Avocat 🥑",
            "description": "Des feuilles de laitue croquante, du poulet grillé, des croûtons dorés, du parmesan râpé, le tout nappé de notre irrésistible sauce César maison.",
            "prix": 10.99,
-           "image": "/img/plats/salade-cesar.png",
+           "image": "img/plats/salade-cesar.png",
            "id_categorie": 3,
            "vedette": "No",
            "active": "Yes"
@@ -136,7 +137,7 @@
           "libelle": "🍤 Pad Thai aux Crevettes 🍜",
           "description": "Des nouilles de riz sautées dans une sauce au tamarin, des crevettes succulentes.",
           "prix": 12.99,
-          "image": "/img/plats/pad-thai-crevette.png",
+          "image": "img/plats/pad-thai-crevette.png",
           "id_categorie": 0,
           "vedette": "Yes",
           "active": "Yes"
@@ -146,7 +147,7 @@
           "libelle": "🍚 Riz Cantonais 🥢",
           "description": "Le Riz Cantonais, délicieusement sauté et agrémenté de légumes, de petits pois, d'œufs et de morceaux de viande, est un plat chinois classique.",
           "prix": 9.99,
-          "image": "/img/plats/riz-cantonais.png",
+          "image": "img/plats/riz-cantonais.png",
           "id_categorie": 0,
           "vedette": "No",
           "active": "Yes"
@@ -159,7 +160,7 @@
             "libelle": "🥟 Gyoza Délicieux 🥢",
             "description": "Gyoza farcis d'une savoureuse combinaison de viande hachée, de légumes et d'épices.",
             "prix": 9.99 ,
-            "image": "/img/entrées/gyoza.png",
+            "image": "img/entrées/gyoza.png",
             "id_categorie": 0,
             "vedette": "No",
             "active": "Yes"
@@ -170,7 +171,7 @@
             "libelle": "🍣 Maki assorti 🥢",
             "description": "Assortiment de makis frais et délicieux, remplis de poisson, de légumes et de riz.",
             "prix": 12.99,
-            "image": "/img/entrées/maki.png",
+            "image": "img/entrées/maki.png",
             "id_categorie": 0,
             "vedette": "Yes",
             "active": "Yes"
@@ -180,7 +181,7 @@
             "libelle": "🍤 Tempura croustillante 🥢",
             "description": "Tempura légère et croustillante, accompagnée d'une sauce spéciale pour une expérience gustative unique.",
             "prix": 14.99,
-            "image": "/img/entrées/tempura.png",
+            "image": "img/entrées/tempura.png",
             "id_categorie": 0,
             "vedette": "No",
             "active": "Yes"
@@ -190,7 +191,7 @@
             "libelle": "🌯 Rouleau de printemps frais 🥢",
             "description": "Rouleau de printemps frais et sain, rempli de légumes croquants et de crevettes, servi avec une sauce légère.",
             "prix": 10.99,
-            "image": "/img/entrées/rouleau_de_printemps.png",
+            "image": "img/entrées/rouleau_de_printemps.png",
             "id_categorie": 0,
             "vedette": "No",
             "active": "Yes"
@@ -200,7 +201,7 @@
             "libelle": "Bruschetta pêche feta 🍑",
             "description": "Délicieuse bruschetta avec des morceaux de pêche sucrée et de la feta crémeuse.",
             "prix": 11.99,
-            "image": "/img/entrées/brushettas.png",
+            "image": "img/entrées/brushettas.png",
             "id_categorie": 1,
             "vedette": "No",
             "active": "Yes"
@@ -210,7 +211,7 @@
             "libelle": "Bruschetta jambon de Parme burrata 🍅",
             "description": "Bruschetta savoureuse avec du jambon de Parme, de la burrata crémeuse et des tomates fraîches.",
             "prix": 12.99,
-            "image": "/img/entrées/brushettas.png",
+            "image": "img/entrées/brushettas.png",
             "id_categorie": 1,
             "vedette": "No",
             "active": "Yes"
@@ -220,7 +221,7 @@
             "libelle": "Bruschetta tomate mozzarella 🍅",
             "description": "Classique bruschetta italienne avec des tomates juteuses et de la mozzarella fondante.",
             "prix": 11.49,
-            "image": "/img/entrées/brushettas.png",
+            "image": "img/entrées/brushettas.png",
             "id_categorie": 1,
             "vedette": "No",
             "active": "Yes"
@@ -235,7 +236,7 @@
             "libelle": "🍰 Cheesecake décadent 🍓",
             "description": "Un cheesecake crémeux avec une croûte de biscuits Graham, garni de fruits frais et d'une délicieuse sauce aux fruits rouges.",
             "prix": 8.99,
-            "image": "/img/dessert/cheesecake.png",
+            "image": "img/dessert/cheesecake.png",
             "vedette": "Yes",
             "active": "Yes"
           },
@@ -244,7 +245,7 @@
             "libelle": "🥤 Milkshake onctueux 🍦",
             "description": "Un milkshake épais et onctueux avec une variété de saveurs de crème glacée, garni de crème fouettée et de pépites de chocolat.",
             "prix": 6.99,
-            "image": "/img/dessert/milkshake.png",
+            "image": "img/dessert/milkshake.png",
             "vedette": "No",
             "active": "Yes"
           },
@@ -253,7 +254,7 @@
             "libelle": "🍮 Tiramisu exquis ☕",
             "description": "Un tiramisu italien classique, avec des couches de biscuits imbibés de café, de mascarpone crémeux et saupoudré de cacao.",
             "prix": 9.99,
-            "image": "/img/dessert/tiramitsu.png",
+            "image": "img/dessert/tiramitsu.png",
             "vedette": "No",
             "active": "Yes"
           },
@@ -262,7 +263,7 @@
             "libelle": "🌕 Gâteau de lune moelleux 🎂",
             "description": "Un gâteau de lune moelleux et délicat, fourré de différentes saveurs et décoré avec des motifs festifs.",
             "prix": 7.99,
-            "image": "/img/dessert/gateau de lune.png",
+            "image": "img/dessert/gateau de lune.png",
             "vedette": "No",
             "active": "Yes"
           },
@@ -271,7 +272,7 @@
             "libelle": "🍨 Glace artisanale 🍧",
             "description": "Des glaces artisanales de qualité dans une variété de parfums exquis, parfaites pour satisfaire votre envie sucrée.",
             "prix": 4.99,
-            "image": "/img/dessert/glace.png",
+            "image": "img/dessert/glace.png",
             "vedette": "Yes",
             "active": "Yes"
           },
@@ -280,7 +281,7 @@
         "libelle": "🍡 Mochi Divin 🌈",
         "description": "Des mochis fourrés au haricot rouge, à la pâte de sésame ou à la glace, offrant une variété de goûts pour satisfaire tous les palais",
         "prix": 1.99,
-        "image": "/img/dessert/mochi.png",
+        "image": "img/dessert/mochi.png",
         "vedette": "Yes",
         "active": "Yes"
         

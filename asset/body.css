@@ -1,0 +1,173 @@
+/* CAROUSEL */
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.753);
+    border-radius: 5%;
+}
+
+/* CATEGORY CARD */
+
+.card-title {
+    text-align: center;
+    font-weight: bolder;
+    font-size:x-large;
+    left: 51%;
+    top: 47%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: bolder;
+    background-color: #000000a2 ;
+    border-radius: 20%;
+    padding: 3%;
+  }
+
+.card {
+    transition: transform 0.2s; 
+    background-color: black;
+  }
+  
+.card:hover {
+    transform: scale(1.05); 
+  }
+
+.card-custom {
+    padding: 0%;
+    max-width: 98%;
+}
+
+.image-title {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-weight: bolder;
+    background-color: #000000a2 ;
+    border-radius: 20%;
+    padding: 3%;
+  }
+  
+.btn {
+    background-color: #ffffff !important;
+    color: black !important;
+    
+}
+
+/* BUTTON NEXT/PREV */
+
+.btn_P {
+  margin-right: 7rem;
+  background-color: #00000000;
+  border: none;
+}
+
+.btn_N {
+  
+  background-color: #00000000;
+  border: none;
+}
+
+/* NAV-TAB */
+#nav-tabContent {
+  background-color: #00000000;
+  max-width: 98%;
+}
+
+.nav-tabs {
+  margin-top: -34%;
+  margin-right: 5%;
+}
+
+.Tab_custom {
+  margin-top: 8rem;
+  background-color: #000000;
+  color: rgb(255, 251, 251);
+  }
+
+
+@media screen and (min-width:454px) {
+  .Tab_custom {
+    margin-top: 10rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+@media screen and (min-width:540px) {
+  .Tab_custom {
+    margin-top: 12rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+@media screen and (min-width:648px) {
+  .Tab_custom {
+    margin-top: 15rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+@media screen and (min-width:790px) {
+  .Tab_custom {
+    margin-top: 17rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+
+@media screen and (min-width:898px) {
+  .Tab_custom {
+    margin-top: 20rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+
+@media screen and (min-width:1062px) {
+  .Tab_custom {
+    margin-top: 22rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+
+@media screen and (min-width:1160px) {
+  .Tab_custom {
+    margin-top: 33rem;
+    background-color: #000000;
+    color: rgb(255, 251, 251);
+    }
+  
+}
+.affichage_Article {
+    text-align: center;
+    color: #ffffff;
+    font-size: large;
+  }
+
+  /* FORM_CONTACT */
+
+.form_custom {
+  background-color: #000000c4;
+  color: #ffffff;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.alert_txt {
+  font-size: smaller;
+}
+
+
+/* BUTTON FORM */
+
+.btn_custom:hover {
+  background-color: #45a049;
+}

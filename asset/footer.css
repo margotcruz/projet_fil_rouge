@@ -1,0 +1,37 @@
+/* LOGO RESEAU */
+.logo_reseau {
+    border: none;
+    background-color: #64666810;
+    
+    
+    
+  }
+  
+  .logo_reseau_c {
+    border: none;
+    background-color: #64666810;
+   
+    margin-top: 35%;
+    
+  }
+  
+  /* DROIT */
+  
+  .droit_destock {
+     
+    color: rgb(0, 0, 0); 
+    padding: 15px 0; 
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    
+  }
+  
+  .droit_mobile {
+    
+    color: rgb(0, 0, 0); 
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    
+  }
