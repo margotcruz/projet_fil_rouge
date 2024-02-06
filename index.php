@@ -6,7 +6,7 @@
 
                   
                       <!-- PLAT DESTOCK -->
-                      <div id="carouselExampleAutoplaying" class="carousel slide h-50 col-6 mx-auto mt-5 d-none d-md-block" data-bs-ride="carousel">
+                      <div id="carouselExampleAutoplaying" class="carousel slide col-6 mx-auto mt-5 d-none d-md-block" data-bs-ride="carousel">
                         <div class="carousel-inner">
                           <div class="carousel-item active">
                             <img src="img/plats/burger-angus.png" class="d-block w-100" alt="...">
@@ -43,14 +43,14 @@
                       </div>
                       </div>
                           <!-- Section des catégories destock-->
-                          <div class="container card-custom ">
+                          <div class="container card-custom d-none d-md-flex">
                               <div class=" row categories-page1 card_destock">
                                  
                               </div>
                           </div>
                       
                           <!-- CATEGORIE MOBILE -->
-                          <div class="d-sm-flex d-md-none card_mobile categorie_mobile d-lg-none justify-content-center">
+                          <div class="categorie_mobile d-sm flex d-md-none d-lg-none">
                              
                           </div>
                       

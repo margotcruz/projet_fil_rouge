@@ -34,12 +34,12 @@
 .card-custom {
     padding: 0%;
     max-width: 98%;
+    margin-top: 10rem;
 }
 
 .image-title {
     left: 50%;
     top: 50%;
-    position: absolute;
     transform: translate(-50%, -50%);
     color: #ffffff;
     font-weight: bolder;
@@ -51,6 +51,8 @@
 .btn {
     background-color: #ffffff !important;
     color: black !important;
+    font-size: larger;
+    font-weight: bold;
     
 }
 

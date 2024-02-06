@@ -8,10 +8,7 @@ require_once('header.php')
     
 
 <div class="container form_custom mt-5 ">
-        <div id="panier">
-            <h2>Votre Panier</h2>
-            <ul id="liste-panier"></ul>
-            <p id="total">Total: 0 €</p>
+            <p id="total-prix"></p>
         </div>
       <form class="Formulaire" id="mon_formulaire_commande" method="post" action="">
         

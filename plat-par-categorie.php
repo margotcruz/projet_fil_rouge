@@ -49,6 +49,31 @@ require_once('header.php')
       </div>
     </nav>
   </div>
+  <div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Plat ajouté au panier</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>Voulez-vous continuer à choisir des plats ou accéder à votre panier ?</p>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Continuer à choisir</button>
+        <a href="panier.html" class="btn btn-secondary">Accéder au panier</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 
 </body>
 <?php

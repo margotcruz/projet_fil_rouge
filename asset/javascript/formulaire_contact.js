@@ -1,7 +1,6 @@
 $(document).ready(function () {
     console.log("Le document est prêt!");
 
-    // Fonction de validation générique pour les champs
     function validateField(fieldName, pattern, errorMessage) {
         $(`#${fieldName}`)
             .val($.trim($(`#${fieldName}`).val()))
@@ -15,11 +14,10 @@ $(document).ready(function () {
     }
 
     $("#submitBtn").on("click", function () {
-        // Effacer les messages d'erreur précédents
         $(".text-danger").empty();
-        let isFormValid = true; // Assurez-vous que la variable est initialisée à true à chaque soumission du formulaire
+        let isFormValid = true; 
 
-        // Définir les modèles pour les champs du formulaire
+        // Modèles pour les champs du formulaire
         const namePattern = /^[a-zA-ZàâäéèêëïîöôüùûçÀÂÄÉÈÊËÏÎÖÔÜÙÛÇ]{2,30}$/;
         const phonePattern = /^\d{10}$/;
         const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
@@ -42,10 +40,8 @@ $(document).ready(function () {
             $("#demande").next(".text-danger").text("*Veuillez entrer une demande d'au moins 15 caractères.");
         }
 
-        // Si le formulaire est valide, envoyer les données au serveur
         if (isFormValid) {
             console.log("Le formulaire est valide !");
-            // Collecter les données du formulaire
             const formData = {
                 nom: $("#nom").val(),
                 prenom: $("#prenom").val(),
@@ -54,15 +50,13 @@ $(document).ready(function () {
                 demande: $("#demande").val(),
             };
 
-            // Envoyer les données du formulaire au serveur via AJAX
+
             $.ajax({
                 type: "POST",
                 url: "formulaire_contact.php",
                 data: formData,
                 success: function (response) {
                     console.log("Réponse du serveur:", response);
-
-                    // Ou pour afficher une alerte personnalisée avec une icône
                     const successAlert = `
                     <div class="alert alert-success p-0 d-flex mt-3 align-items-center">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success">
@@ -71,11 +65,8 @@ $(document).ready(function () {
                     <div class="alert_txt">
                                 ${response}
                             </div>
-                        </div>
-                    `;
-                    // Ajouter l'alerte de succès au corps du document
-                    $("h2").append(successAlert);
-                },
+                        </div>`;
+                    $("h2").append(successAlert);},
                 error: function (xhr, status, error) {
                     console.error("Erreur lors de l'envoi du formulaire:", status, error);
                 }
@@ -86,6 +77,5 @@ $(document).ready(function () {
     // Ajouter une gestionnaire de soumission pour le formulaire
     $("#contactForm").on("submit", function (e) {
         e.preventDefault();
-        // Vous pouvez laisser cette fonction vide car le traitement de soumission est géré par le clic du bouton
     });
 });

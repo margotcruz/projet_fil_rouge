@@ -143,7 +143,7 @@ function displayCategoriesMobile(categories) {
       category.id_categorie <= 4
     ) {
       var categoryCard = `
-                <div class="col-12 container">
+                <div class=" container">
                     <a href="plat-par-categorie.php?categorie=${category.id_categorie}" class="imagine-link position-relative">
                         <img src="${category.image}" alt="" class="img-fluid mb-4 img-accueil-mobile">
                         <h4 class="image-title position-absolute">${category.libelle}</h4>
@@ -167,7 +167,7 @@ function displayVedettePlats(vedettePlats) {
                       <img src="${plat.image}" class="col-3 mb-4" alt="${plat.libelle}" srcset="">
                       <p>${plat.description}</p>
                       <p>${plat.prix} € par portion.</p>
-                      <button class="ajouter-au-panier btn btn-primary">Ajouter au Panier</button>
+                      <button class="ajouter-au-panier btn btn-primary" data-id="${plat.id_plat}">Ajouter au Panier</button>
                       <div>
               </div>
           `;
@@ -188,7 +188,7 @@ function displayVedetteEntrees(vedetteEntrees) {
                       <img src="${entree.image}" class="col-3 mb-4" alt="${entree.libelle}" srcset="">
                       <p>${entree.description}</p>
                       <p>${entree.prix} € par portion.</p>
-                      <button class="ajouter-au-panier btn btn-primary">Ajouter au Panier</button>
+                      <button class="ajouter-au-panier btn btn-primary" data-id="${entree.id_entree}">Ajouter au Panier</button>
                       <div>
               </div>
           `;
@@ -209,7 +209,7 @@ function displayVedetteDesserts(vedettedesserts) {
                     <img src="${dessert.image}" class="col-3 mb-4" alt="${dessert.libelle}" srcset="">
                     <p>${dessert.description}</p>
                     <p>${dessert.prix} € par portion.</p>
-                    <button class="ajouter-au-panier btn btn-primary">Ajouter au Panier</button>
+                    <button class="ajouter-au-panier btn btn-primary" data-id="${dessert.id_dessert}">Ajouter au Panier</button>
                     <div>
             </div>`;
       vedetteDessertsContainer.append(vedetteCard);
@@ -228,7 +228,7 @@ function displayPlats(plats) {
                   <img src="${plat.image}" class="col-3 mb-4" alt="${plat.libelle}" srcset="">
                   <p>${plat.description}</p>
                   <p>${plat.prix} € par portion.</p>
-                  <button class="ajouter-au-panier btn btn-primary">Ajouter au Panier</button>
+                  <button class="ajouter-au-panier btn btn-primary" data-id="${plat.id_plat}">Ajouter au Panier</button>
                   <div>
               </div>
           </div>
@@ -249,7 +249,7 @@ function displayEntree(entrees) {
                     <img src="${entree.image}" class="col-3 mb-4" alt="${entree.libelle}" srcset="">
                     <p>${entree.description}</p>
                     <p>${entree.prix} € par portion.</p>
-                    <button class="ajouter-au-panier btn btn-primary">Ajouter au Panier</button>
+                    <button class="ajouter-au-panier btn btn-primary" data-id="${entree.id_entree}">Ajouter au Panier</button>
                 </div>
             </div>
                   
@@ -269,7 +269,7 @@ function displayDesserts(desserts) {
                     <img src="${dessert.image}" class="col-3 mb-4" alt="${dessert.libelle}" srcset="">
                     <p>${dessert.description}</p>
                     <p>${dessert.prix} € par portion.</p>
-                    <button class="ajouter-au-panier btn btn-primary">Ajouter au Panier</button>
+                    <button class="ajouter-au-panier btn btn-primary" data-id="${dessert.id_dessert}">Ajouter au Panier</button>
                     <div>
                         
             </div>
@@ -277,3 +277,6 @@ function displayDesserts(desserts) {
     dessertContainer.append(dessertCard);
   });
 }
+
+  
+  
