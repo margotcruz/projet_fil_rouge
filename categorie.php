@@ -6,15 +6,39 @@
     ?>
 
 <!-- Section des catégories destock-->
-            <div class="container p-0 mt-5">
-              <div class="row mx-auto  categories-page1">
-                 
-              </div>
-          </div>
+<?php 
+                      require_once ('asset/PDO_connect.php'); 
+                      ?>
+                          <div class="container card-custom d-none d-md-flex">
+                              <div class=" row categories-page1 card_destock">
+                              <?php
+
+                              
+                              foreach ($categories as $cat) {
+                                    $cat->affichage_categorie_destock();
+                              }
+                              
+
+                             ?>
+                              </div>
+                          </div>
       
           <!-- CATEGORIE MOBILE -->
-          <div class="d-sm-flex d-md-none categorie_mobile d-lg-none">
-             
+
+          <?php 
+                      require_once ('asset/PDO_connect.php'); 
+                      ?>
+                          <div class="categorie_mobile d-sm flex d-md-none d-lg-none">
+                          <?php
+
+                              
+                              foreach ($categories as $cat) {
+                                    $cat->affichage_categorie_mobile();
+                              }
+                              
+
+                             ?>
+                          </div>
           </div>
       
           <footer class="text-center">

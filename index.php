@@ -1,4 +1,3 @@
-
 <body class="parallax-index">
 
 
@@ -42,16 +41,38 @@
                         </button>
                       </div>
                       </div>
-                          <!-- Section des catégories destock-->
+                      <!-- Section des catégories destock-->
+                      <?php 
+                      require_once ('asset/PDO_connect.php'); 
+                      ?>
                           <div class="container card-custom d-none d-md-flex">
                               <div class=" row categories-page1 card_destock">
-                                 
+                              <?php
+
+                              
+                              foreach ($categories as $cat) {
+                                    $cat->affichage_categorie_destock();
+                              }
+                              
+
+                             ?>
                               </div>
                           </div>
                       
                           <!-- CATEGORIE MOBILE -->
+                          <?php 
+                      require_once ('asset/PDO_connect.php'); 
+                      ?>
                           <div class="categorie_mobile d-sm flex d-md-none d-lg-none">
-                             
+                          <?php
+
+                              
+                              foreach ($categories as $cat) {
+                                    $cat->affichage_categorie_mobile();
+                              }
+                              
+
+                             ?>
                           </div>
                       
                           <footer class="text-center mt-5">
