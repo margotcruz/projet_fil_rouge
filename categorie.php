@@ -4,17 +4,15 @@
     <?php
     require_once('header.php')
     ?>
+<?php require('asset/PDO_connect.php'); ?>
 
 <!-- Section des catégories destock-->
-<?php 
-                      require_once ('asset/PDO_connect.php'); 
-                      ?>
                           <div class="container card-custom d-none d-md-flex">
                               <div class=" row categories-page1 card_destock">
                               <?php
 
                               
-                              foreach ($categories as $cat) {
+                              foreach ($TouteCategories as $cat) {
                                     $cat->affichage_categorie_destock();
                               }
                               
@@ -25,14 +23,11 @@
       
           <!-- CATEGORIE MOBILE -->
 
-          <?php 
-                      require_once ('asset/PDO_connect.php'); 
-                      ?>
                           <div class="categorie_mobile d-sm flex d-md-none d-lg-none">
                           <?php
 
                               
-                              foreach ($categories as $cat) {
+                              foreach ($TouteCategories as $cat) {
                                     $cat->affichage_categorie_mobile();
                               }
                               

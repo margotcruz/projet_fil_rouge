@@ -8,7 +8,7 @@ class plat {
     private $id_categorie;
     private $active;
 
-    public function __construct($libelle, $description, $prix, $image, $id, $id_categorie, $active) {
+    public function __construct($libelle=null, $description=null, $prix=null, $image=null, $id=null, $id_categorie=null, $active=null) {
         
         $this-> libelle = $libelle;
         $this-> description = $description;
@@ -78,36 +78,31 @@ class plat {
         return $this;
     }
 
-public function affichage_plat_header () {
-    echo '<div class="card">
-    <img src="' . $this->getImage() . '" class="card-img mb-3" alt="' . $this->getLibellePlat() . '">
-    <div class="card-img-overlay">
-      <h5 class="card-title">' . $this->getLibellePlat() . '</h5>
+
+public function affichage_plats_carousel () {
+    echo ' <div class="carousel-item active">
+    <img src="' . $this->getImage() . '" class="d-block w-100" alt="' . $this->getLibellePlat() . '">
+    <div class="carousel-caption d-none d-md-block">
+      <h5>' . $this->getLibellePlat() . '</h5>
+      <p>'. $this->getDescription() . '</p>
+      <p>'. $this->getPrix() . ' € par portion.</p>
     </div>
   </div>';
 }
 
+
 public function affichage_plat() {
-    echo '<div class="affichage_Article mt-5">
-    <div class=" justify-content-center">
-        <h4>'. $this->getLibellePlat() . '</h4>
-        <img src="'. $this->getImage() .'" class="col-3 mb-4" alt="'. $this->getLibellePlat() . '" srcset="">
+    echo ' 
+    <div class="card">
+      <img src="' . $this->getImage() . '" alt="' . $this->getLibellePlat() . '">
+      <div class="card-details">
+        <p>' . $this->getLibellePlat() . '</p>
         <p>'. $this->getDescription() . '</p>
-        <p>'. $this->getPrix() . ' € par portion.</p>
-        <button class="ajouter-au-panier btn btn-primary" data-id="'. $this->getId_Plat() . '">Ajouter au Panier</button>
-        <div>
+        <button>Commander</button>
     </div>
-</div>';
+  </div>
+  ';
 }
 
-public function affichage_plat_vedette() {
-   echo '<div class="box-front">
-   <img src="'. $this->getImage() .'" alt="'. $this->getLibellePlat() . '" class="img-box">
- </div>
- <div class="box-back">
-   <p>'. $this->getDescription() . '</p>
-   <p>'. $this->getPrix() . '</p>
- </div>';
-}
 }
 ?>

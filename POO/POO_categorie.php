@@ -76,8 +76,9 @@ class categorie {
                 <h5 class="card-title p-3">' . $this->getLibelle() . '</h5>
             </div>
             <div class="card-body mx-auto">
-                <a href="plat-par-categorie.php?categorie='. $this->getId() .'" class="btn btn-primary">Découvrir</a>
-            </div>
+    <a href="plat-par-categorie.php?categorie_id=<?= $this->getId() ?>" class="btn btn-primary">Découvrir</a>
+</div>
+
         </div>
     </div>';
     }

@@ -8,7 +8,7 @@ class entree {
     private $id_categorie;
     private $active;
 
-    public function __construct($libelle, $description, $prix, $image, $id, $id_categorie, $active) {
+    public function __construct($libelle=null, $description=null, $prix=null, $image=null, $id=null, $id_categorie=null, $active=null) {
         
         $this-> libelle = $libelle;
         $this-> description = $description;
@@ -92,15 +92,16 @@ public function affichage_entree_categorie() {
 }
 
 public function affichage_entree() {
-    echo '<div class="affichage_Article mt-5">
-    <div class=" justify-content-center">
-        <h4>'. $this->getLibelleEntree().'</h4>
-        <img src="'. $this->getImage().'" class="col-3 mb-4" alt="'. $this->getLibelleEntree().'" srcset="">
+    echo ' 
+    <div class="card">
+      <img src="' . $this->getImage() . '" alt="'. $this->getLibelleEntree().'">
+      <div class="card-details">
+        <p>'. $this->getLibelleEntree().'</p>
         <p>'. $this->getDescriptionEntree().'</p>
-        <p>'. $this->getPrix().' € par portion.</p>
-        <button class="ajouter-au-panier btn btn-primary" data-id="'. $this->getIdEntree().'">Ajouter au Panier</button>
+        <button>Commander</button>
     </div>
-</div>';
+  </div>
+  ';
 }
 }
 ?>

@@ -2,53 +2,86 @@
 <?php
 require_once('header.php')
 ?>
+<?php require('asset/PDO_connect.php');?>
 
 
     <!-- ... Affichage des plats par categories destock ... -->
-    <nav class="col-11 mx-auto  d-md-block d-lg-block Tab_custom">
-      <div class="nav nav-tabs " id="nav-tab" role="tablist">
-        <button class="nav-link active " id="nav-vedette-tab" data-bs-toggle="tab" data-bs-target="#nav-vedette"
-          type="button" role="tab" aria-controls="nav-vedette " aria-selected="true">Articles vedette</button>
 
-        <button class="nav-link" id="nav-entree-tab" data-bs-toggle="tab" data-bs-target="#nav-entree" type="button"
-          role="tab" aria-controls="nav-profile" aria-selected="false">Entrée</button>
 
-        <button class="nav-link" id="nav-plats-tab" data-bs-toggle="tab" data-bs-target="#nav-plats" type="button"
-          role="tab" aria-controls="nav-plats" aria-selected="false">Plats</button>
-
-        <button class="nav-link" id="nav-dessert-tab" data-bs-toggle="tab" data-bs-target="#nav-dessert" type="button"
-          role="tab" aria-controls="nav-dessert" aria-selected="false">Dessert</button>
-
-        <button class="nav-link" id="nav-boisson-tab" data-bs-toggle="tab" data-bs-target="#nav-boisson" type="button"
-          role="tab" aria-controls="nav-boisson" aria-selected="false">Boisson</button>
-
-      </div>
-
-      <div class="tab-content " id="nav-tabContent">
-        <div class="tab-pane fade show active mx-4" id="nav-vedette" role="tabpanel" aria-labelledby="nav-vedette-tab"
-          tabindex="0">
-
-          
-        </div>
-
-        <div class="tab-pane fade" id="nav-entree" role="tabpanel" aria-labelledby="nav-entree-tab" tabindex="0">
-          
-        </div>
-
-        <div class="tab-pane fade" id="nav-plats" role="tabpanel" aria-labelledby="nav-plats-tab" tabindex="0">
-          
-        </div>
-
-        <div class="tab-pane fade" id="nav-dessert" role="tabpanel" aria-labelledby="nav-dessert-tab" tabindex="0">
-          
-        </div>
-
-        <div class="tab-pane fade" id="nav-boisson" role="tabpanel" aria-labelledby="nav-boisson-tab" tabindex="0">
-          
-        </div>
-      </div>
-    </nav>
+<nav id="navbar-example2" class="navbar px-3 mb-3 sticky-top">
+  <a class="navbar-brand" href="#">MENU</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link " href="#scrollspyHeading1">Nos produits vedettes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Entrées</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading3">Plats</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading4">Desserts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading5">Boisson</a>
+    </li>
+  </ul>
+</nav>
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  <h4 id="scrollspyHeading1" class="affichage_Article">Nos produits vedettes</h4>
+  <div class="carousel-container">
+  <div class="carousel">
+                              <?php foreach ($PlatsVedetteCategories as $plat) {
+                                $plat->affichage_plat();
+                              }
+                              ?>
+                              <?php foreach ($EntreeVedette as $entree) {
+                                $entree->affichage_entree();
+                              }
+                              ?>
+                              <?php foreach ($DessertVedette as $dessert) {
+                                $dessert->affichage_dessert();
+                              }
+                              ?>
+</div>
   </div>
+
+    
+
+
+
+  
+  <h4 id="scrollspyHeading2" class="affichage_Article">Entrées</h4>
+  <div class="carousel-container">
+  <div class="carousel">
+                              <?php foreach ($ToutesLesEntrees as $entree) {
+                                $entree->affichage_entree();
+                              }
+                              ?>
+  </div>
+  </div>
+  
+  <h4 id="scrollspyHeading3" class="affichage_Article">Plats</h4>
+  <div class="carousel-container">
+  <div class="carousel">
+                              <?php foreach ($PlatsParCategories as $platCat) {
+                                $platCat->affichage_plat();
+                              }
+                              ?>
+  </div>
+  </div>
+
+  <h4 id="scrollspyHeading4" class="affichage_Article">Dessert</h4>
+  <div class="carousel-container">
+  <div class="carousel">
+                              <?php foreach ($ToutsLesDessert as $dessert) {
+                                $dessert->affichage_dessert();
+                              }
+                              ?>
+  </div>
+  </div>
+    
   <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">

@@ -7,7 +7,7 @@ class dessert {
     private $id;
     private $active;
 
-    public function __construct($libelle, $description, $prix, $image, $id, $id_categorie, $active) {
+    public function __construct($libelle=null, $description=null, $prix=null, $image=null, $id=null, $id_categorie=null, $active=null) {
         
         $this-> libelle = $libelle;
         $this-> description = $description;
@@ -69,15 +69,13 @@ class dessert {
     }
 
 public function affichage_dessert() {
-    echo '<div class="affichage_Article mt-5">
-    <div class=" justify-content-center">
-        <h4>'. $this->getLibelleDessert().'</h4>
-        <img src="'. $this->getImage().'" class="col-3 mb-4" alt="'. $this->getLibelleDessert().'" srcset="">
-        <p>'. $this->getDescriptionDessert().'</p>
-        <p>'. $this->getPrix().' € par portion.</p>
-        <button class="ajouter-au-panier btn btn-primary" data-id="'. $this->getId().'">Ajouter au Panier</button>
-        <div>
-            
+    echo '<div class="card">
+    <img src="' . $this->getImage() . '" alt="'. $this->getLibelleDessert().'">
+    <div class="card-details">
+      <p>'. $this->getLibelleDessert().'</p>
+      <p>'. $this->getDescriptionDessert().'</p>
+      <button>Commander</button>
+  </div>
 </div>';
 }
 }

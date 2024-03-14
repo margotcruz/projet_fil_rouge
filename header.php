@@ -75,20 +75,20 @@
             <ul class="navbar-nav d-none d-md-flex">
               <li class="nav-item m-4 d-flex justify-content-center">
                 <a
-                  class="nav-link link-active"
+                  class="nav-link-head link-active"
                   aria-current="page"
                   href="index.php"
                   >ACCUEIL</a
                 >
               </li>
               <li class="nav-item m-4 d-flex justify-content-center">
-                <a class="nav-link" href="categorie.php">CATEGORIE</a>
+                <a class="nav-link-head" href="categorie.php">CATEGORIE</a>
               </li>
               <li class="nav-item m-4 d-flex justify-content-center">
-                <a class="nav-link" href="plats.php">PLATS</a>
+                <a class="nav-link-head" href="plats.php">PLATS</a>
               </li>
               <li class="nav-item m-4 d-flex justify-content-center">
-                <a class="nav-link" href="contact.php">CONTACT</a>
+                <a class="nav-link-head" href="contact.php">CONTACT</a>
               </li>
             </ul>
 
@@ -120,20 +120,20 @@
             <ul class="navbar-nav me-auto mb-lg-0 d-sm-flex d-md-none">
               <li class="nav-item m-5 d-flex justify-content-center">
                 <a
-                  class="nav-link link-active"
+                  class="nav-link-head link-active"
                   aria-current="page"
                   href="index.php"
                   >ACCUEIL</a
                 >
               </li>
               <li class="nav-item m-5 d-flex justify-content-center">
-                <a class="nav-link" href="categorie.php">CATEGORIE</a>
+                <a class="nav-link-head" href="categorie.php">CATEGORIE</a>
               </li>
               <li class="nav-item m-5 d-flex justify-content-center">
-                <a class="nav-link" href="plats.php">PLATS</a>
+                <a class="nav-link-head" href="plats.php">PLATS</a>
               </li>
               <li class="nav-item m-5 d-flex justify-content-center">
-                <a class="nav-link" href="contact.php">CONTACT</a>
+                <a class="nav-link-head" href="contact.php">CONTACT</a>
               </li>
             </ul>
             <div></div>
